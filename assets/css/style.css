@@ -1,4 +1,4 @@
-/* Google fonts */
+Google fonts
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Macondo&display=swap');
 
 /* CSS variables */
@@ -27,11 +27,11 @@ h1, h2, h3 {
 }
 
 /* grid visualisation for testing */
-.container, .row {
+/* .container, .row {
     border: 2px solid black;
 }
 
 .col-12 {
     border: 2px solid white;
     background-color: lightgray;
-}
+} */
