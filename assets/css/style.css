@@ -5,7 +5,7 @@ Google fonts
 :root {
     --primary-font: "Inter", sans-serif;
     --secondary-font: "Macondo", cursive; 
-    --primary-color: #3a2620 /* dark brown */; 
+    --primary-color: #3a2620; 
     --secondary-color: #aa9581;
     --highlight-color: #416a8e;
     --light-highlight-color: #7a9fc2;
@@ -26,6 +26,14 @@ h1, h2, h3 {
     color: var(--highlight-color);
 }
 
+/* Navbar */
+#navbar {
+    background-color: #3a2620;
+}
+
+#navbar .logo {
+    width: 30px;
+}
 /* grid visualisation for testing */
 /* .container, .row {
     border: 2px solid black;
@@ -35,3 +43,4 @@ h1, h2, h3 {
     border: 2px solid white;
     background-color: lightgray;
 } */
+
