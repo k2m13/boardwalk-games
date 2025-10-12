@@ -75,7 +75,7 @@ h2 {
     background-color: var(--highlight-color);
     color: white;
  }
- 
+
 /* Header */
 
 #header .lead {
@@ -102,6 +102,14 @@ h2 {
 
 #contact h2 {
     color: white;
+}
+
+/* Events section */
+
+#discount {
+    background-color: var(--highlight-color);
+    color: white;
+    padding: 0 10px;
 }
 /* Footer / contact */
 #contact {
