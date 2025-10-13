@@ -330,6 +330,52 @@
     <!-- Font Awesome kit -->
     <script src="https://kit.fontawesome.com/aa9af45995.js" crossorigin="anonymous"></script>
 
+    <!-- JavaScript code to ensure the Bootstrap mobile navbar collapses when navigating to in-page links -->
+    <script>
+        // Wait for the document to be fully loaded
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all navigation links within the collapsible part of the navbar
+            document.querySelectorAll(".navbar-collapse .nav-link").forEach((link) => {
+                link.addEventListener("click", function (e) {
+                    const href = this.getAttribute("href");
+
+                    // 1. Check if the link points to an in-page section (contains '#')
+                    if (href.includes("#")) {
+
+                        // 2. Extract only the hash part (e.g., '#services' from 'index.html#services')
+                        // The .pop() method gets the last item after splitting by '#'
+                        const hash = '#' + href.split('#').pop();
+                        const section = document.querySelector(hash);
+
+                        // 3. Only proceed if the target section is found on the page
+                        if (section) {
+                            e.preventDefault(); // Stop the default browser jump/reload
+
+                            // 4. Calculate offset for fixed navbar
+                            // Get the navbar element (assuming the nav itself is the fixed element)
+                            const navbar = document.getElementById("navbar");
+                            const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+                            // 5. Smooth scroll to the section
+                            window.scroll({
+                                top: section.offsetTop - navbarHeight,
+                                behavior: "smooth",
+                            });
+
+                            // 6. Collapse the Bootstrap 5 Navbar
+                            const navbarCollapseElement = document.getElementById("navbarNav");
+                            if (navbarCollapseElement.classList.contains("show")) {
+                                // Use Bootstrap's API to ensure proper state and ARIA updates
+                                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapseElement) || new bootstrap.Collapse(navbarCollapseElement, { toggle: false });
+                                bsCollapse.hide();
+                            }
+                        }
+                    }
+                    // If it doesn't contain a '#', we allow the default behavior (e.g., navigating to 'game-library.html')
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
